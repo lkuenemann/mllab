@@ -1,41 +1,14 @@
-# General modules
+# Standard librairies
 import numpy as np
-# General Keras functionalities
 from keras.models import load_model
 from keras.callbacks import ModelCheckpoint
-# Neural network components from Keras
 from keras.models import Sequential
 from keras.layers import Embedding
 from keras.layers import LSTM
 from keras.layers import RepeatVector
 from keras.layers import Dense
-
-
-# Let's define vocabulary size for out tokenizer
-vocab_size = 2000
-# We'll use the same size for both languages to simplify
-en_vocab_size = vocab_size
-fr_vocab_size = vocab_size
-# max_sentence_length = 20 # Pad all sentences to 40 word pieces (tokens) max
-fr_max_len = 22
-en_max_len = 10
-
-# Defining all the parameters of our network
-nb_cells = 256 # LSTM cells in encoder/decoder
-
-# Training parameters
-nb_epochs = 30
-batch_size = 64
-
-# Files to save our preprocessed data numpy arrays
-trainX_array_filename = "trainX.npy"
-trainY_array_filename = "trainY.npy"
-testX_array_filename = "testX.npy"
-testY_array_filename = "testY.npy"
-
-
-# File name to save our trained model weights
-trained_model_filename = "fr_en_nmt_model_test.h5"
+# Local modules
+from params import * # set of all parameters
 
 
 # Load our ready-to-use numpy arrays for training and testing

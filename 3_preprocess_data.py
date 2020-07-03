@@ -1,30 +1,11 @@
-# General modules
+# Standard librairies
 import numpy as np
 import pandas as pd
-# Data preprocessing tools
 from keras.preprocessing.sequence import pad_sequences
-# Tokenizer
-import sentencepiece as sp
-
-
-clean_train_filename = "clean_en_fr.txt" # both languages
-
-subset_size = 10000 # total sentence pairs in dataset: 175,623
-test_size = 1000 # sentence pairs for testing
-train_size = subset_size - test_size # sentence pairs for training
-
-# Files to save our preprocessed data numpy arrays
-trainX_array_filename = "trainX.npy"
-trainY_array_filename = "trainY.npy"
-testX_array_filename = "testX.npy"
-testY_array_filename = "testY.npy"
-
-# Let's define vocabulary size for out tokenizer
-vocab_size = 2000
-# We'll use the same size for both languages to simplify
-en_vocab_size = vocab_size
-fr_vocab_size = vocab_size
-# max_sentence_length = 20 # Pad all sentences to 40 word pieces (tokens) max
+# 3rd party libraries
+import sentencepiece as sp # Tokenizer
+# Local modules
+from params import * # set of all parameters
 
 
 # Load trained tokenizer for English and French

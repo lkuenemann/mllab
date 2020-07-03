@@ -1,16 +1,10 @@
-# General modules
+# Standard librairies
 import numpy as np
-# General Keras functionalities
 from keras.models import load_model
-# Tokenizer
-import sentencepiece as sp
-
-
-# Files to save our preprocessed data numpy arrays
-testX_array_filename = "testX.npy"
-testY_array_filename = "testY.npy"
-# File name to save our trained model weights
-trained_model_filename = "fr_en_nmt_model_test.h5"
+# 3rd party librairies
+import sentencepiece as sp # Tokenizer
+# Local modules
+from params import * # set of all parameters
 
 
 # Let's load the trained model

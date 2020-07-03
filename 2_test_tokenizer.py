@@ -1,5 +1,8 @@
-# Tokenizer
-import sentencepiece as sp
+# 3rd party librairies
+import sentencepiece as sp # Tokenizer
+# Local modules
+from params import * # set of all parameters
+
 
 # Creating a tokenizer object for English
 en_sp = sp.SentencePieceProcessor()

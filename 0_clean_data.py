@@ -1,21 +1,8 @@
+# Standard librairies
 import pandas as pd
+# Local modules
+from params import * # set of all parameters
 
-# Source text database
-data_filename = "./fra.txt"
-
-# Text preprocessing
-subset_size = 10000 # total sentence pairs in dataset: 175,623
-test_size = 1000 # sentence pairs for testing
-train_size = subset_size - test_size # sentence pairs for training
-clean_en_filename = "clean_en.txt" # file to save cleaned English text data
-clean_fr_filename = "clean_fr.txt" # French
-clean_train_filename = "clean_en_fr.txt" # both languages
-
-# Let's define vocabulary size for out tokenizer
-vocab_size = 2000
-# We'll use the same size for both languages to simplify
-en_vocab_size = vocab_size
-fr_vocab_size = vocab_size
 
 # Importing the dataset in a Pandas dataframe
 train_df = pd.read_csv(
