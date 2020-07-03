@@ -28,7 +28,6 @@ fr_sp.Load("fr.model")
 predictions = model.predict_classes(testX)
 
 # Check the translation on a few sentences
-decoded_predictions = []
 for index in range(10):
     print("Original:")
     print(fr_sp.DecodeIds(testX[index, :].tolist()))
