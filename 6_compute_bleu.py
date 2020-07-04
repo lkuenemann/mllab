@@ -61,9 +61,6 @@ decoded_predictions = []
 for sentence in unpadded_predictions:
     decoded_predictions.append(en_sp.DecodeIds(sentence))
 
-print(decoded_expectations)    
-print(decoded_predictions)
-
 # Retokenize to words for computing BLEU score
 retok_exp = []
 for sentence in decoded_expectations:
