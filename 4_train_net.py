@@ -1,6 +1,7 @@
 # Standard librairies
 import numpy as np
 from keras.callbacks import ModelCheckpoint
+import matplotlib.pyplot as plt
 # Local modules
 from params import * # set of all parameters
 
@@ -27,10 +28,19 @@ checkpoint = ModelCheckpoint(
     verbose = 1,
     save_best_only = True,
     mode = 'min')
-model.fit(
+hist = model.fit(
     trainX,
     trainY,
     epochs = nb_epochs,
     batch_size = batch_size,
     callbacks = [checkpoint],
     validation_data = (testX, testY))
+
+# Plot loss history
+plt.plot(hist.history['loss'])
+plt.plot(hist.history['val_loss'])
+plt.title('Model loss')
+plt.ylabel('Loss')
+plt.xlabel('Epoch')
+plt.legend(['Train', 'Test'], loc='upper left')
+plt.show()
